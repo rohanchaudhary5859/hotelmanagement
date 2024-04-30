@@ -54,16 +54,15 @@
     <div class="container">
         <div class="hotel-detail">
             <?php
-            // Retrieve hotel details based on the hotel_id parameter from the URL
+         
             if (isset($_GET['hotel_id'])) {
                 $hotel_id = $_GET['hotel_id'];
 
-                // Dummy data for hotel details (replace with your actual data retrieval logic)
+               
                 $hotelName = "Maharaj";
                 $description = "The best Hotel all over India";
-                $imagePath = "image/hotel1.jpg"; // Assuming the images are in a folder named "image"
-
-                // Example dummy data based on hotel_id
+                $imagePath = "image/hotel1.jpg"; 
+            
                 if ($hotel_id == 1) {
                     $hotelName = "Superior Room";
                     $description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
@@ -81,15 +80,14 @@
                     $description = "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
                     $imagePath = "image/hotel2photo.jpg";
                 }
-                // Display hotel details including the image
+             
                 echo "<img src='$imagePath' alt='$hotelName'>";
                 echo "<h2 class='hotel-name'>$hotelName</h2>";
                 echo "<p class='description'>$description</p>";
 
-                // Book Now button
                 echo "<button class='book-btn' onclick='bookNow()'>Book Now</button>";
             } else {
-                // If hotel_id parameter is not provided, display an error message
+               
                 echo "<p>Error: Hotel not found.</p>";
             }
             ?>
@@ -97,8 +95,18 @@
     </div>
     <script>
         function bookNow() {
-            // Add your code here to handle the book now functionality
-            alert('Booking functionality will be implemented here.');
+            var name = prompt("Please enter your name:");
+            var contactNumber = prompt("Please enter your contact number:");
+            var roomCategory = prompt("Please enter the room booking category:");
+
+            // Validate if required fields are filled
+            if (name && contactNumber && roomCategory) {
+                // Send the booking details to the server or perform any required action
+                alert("Thank you, " + name + "! Your booking for the " + roomCategory + " has been successfully submitted. Our team will contact you shortly at " + contactNumber + ".");
+            } else {
+                // If any required field is not filled, show an error message
+                alert("Please fill all the required fields.");
+            }
         }
 
         // Script to navigate back to the home page when the user clicks the browser's back button
@@ -106,7 +114,7 @@
             if (window.history && window.history.pushState) {
                 window.history.pushState('forward', null, './#');
                 window.onpopstate = function() {
-                    window.location.href = 'home.php';
+                    window.location.href = 'bookingdetails.php';
                 };
             }
         };
