@@ -151,72 +151,54 @@ if($usermail == true){
             <div class="footer">
                 <button class="btn btn-success" name="guestdetailsubmit">Submit</button>
             </div>
-            </form>
-
-    </div>
-  </section>
-  <section>
-  <title>Filters</title>
-    <style>
-        #sidebar {
-            background-color: #f4f4f4;
-            padding: 20px;
-            border-radius: 5px;
-        }
-        #sidebar h2 {
-            margin-bottom: 20px;
-            color: #333;
-        }
-        #sidebar h3 {
-            margin-bottom: 10px;
-            color: #666;
-        }
-        select, input[type="radio"] {
-            margin-bottom: 10px;
-        }
-        input[type="submit"] {
-            background-color: #4caf50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-    </style>
-</head>
-<body>
-    <div id="sidebar">
-        <h2>Filters</h2>
-        <form method="get" action="search.php">
-            <h3>Category</h3>
-            <select name="category">
-                <option value="">Types</option>
-                <option value="superior-room">Superior Room</option>
-                <option value="delux-room">Delux Room</option>
-                <option value="guest-room">Guest Room</option>
-                <option value="single-room">Single Room</option>
-            </select>
-
-            <h3>Pricing</h3>
-            <input type="radio" name="price" value="0-50"> $0 - $50<br>
-            <input type="radio" name="price" value="51-100"> $51 - $100<br>
-            <input type="radio" name="price" value="101-200"> $101 - $200<br>
-
-            <h3>Location</h3>
-            <select name="location">
-                <option value="">All Locations</option>
-                <option value="new-york">New York</option>
-                <option value="los-angeles">Los Angeles</option>
-                <option value="chicago">Chicago</option>
-            </select>
-
-            <input type="submit" value="Apply Filters">
         </form>
+
+        <!-- ==== room book php ====-->
+        <?php       
+            if (isset($_POST['guestdetailsubmit'])) {
+                $Name = $_POST['Name'];
+                $Email = $_POST['Email'];
+                $Country = $_POST['Country'];
+                $Phone = $_POST['Phone'];
+                $RoomType = $_POST['RoomType'];
+                $Bed = $_POST['Bed'];
+                $NoofRoom = $_POST['NoofRoom'];
+                $Meal = $_POST['Meal'];
+                $cin = $_POST['cin'];
+                $cout = $_POST['cout'];
+
+                if($Name == "" || $Email == "" || $Country == ""){
+                    echo "<script>swal({
+                        title: 'Fill the proper details',
+                        icon: 'error',
+                    });
+                    </script>";
+                }
+                else{
+                    $sta = "NotConfirm";
+                    $sql = "INSERT INTO roombook(Name,Email,Country,Phone,RoomType,Bed,NoofRoom,Meal,cin,cout,stat,nodays) VALUES ('$Name','$Email','$Country','$Phone','$RoomType','$Bed','$NoofRoom','$Meal','$cin','$cout','$sta',datediff('$cout','$cin'))";
+                    $result = mysqli_query($conn, $sql);
+
+                    
+                        if ($result) {
+                            echo "<script>swal({
+                                title: 'Reservation successful',
+                                icon: 'success',
+                            });
+                        </script>";
+                        } else {
+                            echo "<script>swal({
+                                    title: 'Something went wrong',
+                                    icon: 'error',
+                                });
+                        </script>";
+                        }
+                }
+            }
+            ?>
+          </div>
+
     </div>
-</body>
   </section>
     
   <section id="secondsection"> 
@@ -235,7 +217,7 @@ if($usermail == true){
               <i class="fa-solid fa-dumbbell"></i>
               <i class="fa-solid fa-person-swimming"></i>
             </div>
-            <a href="hoteldetailpage.php?hotel_id=1" class="btn btn-primary bookbtn">details</a>
+            <button class="btn btn-primary bookbtn" onclick="openbookbox()">Book</button>
           </div>
         </div>
         <div class="roombox">
@@ -248,7 +230,7 @@ if($usermail == true){
               <i class="fa-solid fa-spa"></i>
               <i class="fa-solid fa-dumbbell"></i>
             </div>
-            <a href="hoteldetailpage.php?hotel_id=2" class="btn btn-primary bookbtn">details</a>
+            <button class="btn btn-primary bookbtn" onclick="openbookbox()">Book</button>
           </div>
         </div>
         <div class="roombox">
@@ -260,7 +242,7 @@ if($usermail == true){
               <i class="fa-solid fa-burger"></i>
               <i class="fa-solid fa-spa"></i>
             </div>
-            <a href="hoteldetailpage.php?hotel_id=3" class="btn btn-primary bookbtn">details</a>
+            <button class="btn btn-primary bookbtn" onclick="openbookbox()">Book</button>
           </div>
         </div>
         <div class="roombox">
@@ -271,7 +253,7 @@ if($usermail == true){
               <i class="fa-solid fa-wifi"></i>
               <i class="fa-solid fa-burger"></i>
             </div>
-            <a href="hoteldetailpage.php?hotel_id=4" class="btn btn-primary bookbtn">details</a>
+            <button class="btn btn-primary bookbtn" onclick="openbookbox()">Book</button>
           </div>
         </div>
       </div>
@@ -306,7 +288,7 @@ if($usermail == true){
       <i class="fa-solid fa-envelope"></i>
     </div>
     <div class="createdby">
-      <h5>Created by Rohan</h5>
+      <h5>Created by @tushar</h5>
     </div>
   </section>
 </body>
