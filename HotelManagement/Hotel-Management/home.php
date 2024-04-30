@@ -220,67 +220,61 @@ if($usermail == true){
   </section>
     
   <section id="secondsection"> 
-    
     <img src="./image/homeanimatebg.svg">
     <div class="ourroom">
-    <section id="secondsection"> 
-        <img src="./image/homeanimatebg.svg">
-        <div class="ourroom">
-            <h1 class="head">≼ Our Rooms ≽</h1>
-            <div class="roomselect">
-                <div class="roombox">
-                    <a href="hoteldetailpage.php?hotel_id=1">
-                        <div class="hotelphoto h1"></div>
-                    </a>
-                    <div class="roomdata">
-                        <h2>Superior Room</h2>
-                        <div class="price">$100/night</div> <!-- Add price here -->
-                        <div class="services">
-                            <h2>Premium</h2>
-                        </div>
-                        <a href="hoteldetailpage.php?hotel_id=1" class="btn btn-primary bookbtn">Book</a>
-                    </div>
-                </div>
-                <div class="roombox">
-                    <a href="hoteldetailpage.php?hotel_id=2">
-                        <div class="hotelphoto h2"></div>
-                    </a>
-                    <div class="roomdata">
-                        <h2>Deluxe Room</h2>
-                        <div class="price">$150/night</div> <!-- Add price here -->
-                        <div class="services">
-                            <h2>Luxury</h2>
-                        </div>
-                        <a href="hoteldetailpage.php?hotel_id=2" class="btn btn-primary bookbtn">Book</a>
-                    </div>
-                </div>
-                <!-- Add more roombox elements for other rooms -->
+      <h1 class="head">≼ Our room ≽</h1>
+      <div class="roomselect">
+        <div class="roombox">
+          <div class="hotelphoto h1"></div>
+          <div class="roomdata">
+            <h2>Superior Room</h2>
+            <div class="services">
+              <i class="fa-solid fa-wifi"></i>
+              <i class="fa-solid fa-burger"></i>
+              <i class="fa-solid fa-spa"></i>
+              <i class="fa-solid fa-dumbbell"></i>
+              <i class="fa-solid fa-person-swimming"></i>
             </div>
-</div>
-<div class="roombox">
-    <a href="hoteldetailpage.php?hotel_id=3">
-        <div class="hotelphoto h3"></div>
-    </a>
-    <div class="roomdata">
-        <h2>Guest Room</h2>
-        <div class="services">
-            <h2>Best in town</h2>
+            <a href="hoteldetailpage.php?hotel_id=1" class="btn btn-primary bookbtn">details</a>
+          </div>
         </div>
-        <a href="hoteldetailpage.php?hotel_id=3" class="btn btn-primary bookbtn">Book</a>
-    </div>
-</div>
-<div class="roombox">
-    <a href="hoteldetailpage.php?hotel_id=4">
-        <div class="hotelphoto h4"></div>
-    </a>
-    <div class="roomdata">
-        <h2>Single Room</h2>
-        <h2>For you</h2>
-        <a href="hoteldetailpage.php?hotel_id=4" class="btn btn-primary bookbtn">Book</a>
-    </div>
-</div>
-
-     
+        <div class="roombox">
+          <div class="hotelphoto h2"></div>
+          <div class="roomdata">
+            <h2>Delux Room</h2>
+            <div class="services">
+              <i class="fa-solid fa-wifi"></i>
+              <i class="fa-solid fa-burger"></i>
+              <i class="fa-solid fa-spa"></i>
+              <i class="fa-solid fa-dumbbell"></i>
+            </div>
+            <a href="hoteldetailpage.php?hotel_id=2" class="btn btn-primary bookbtn">details</a>
+          </div>
+        </div>
+        <div class="roombox">
+          <div class="hotelphoto h3"></div>
+          <div class="roomdata">
+            <h2>Guest Room</h2>
+            <div class="services">
+              <i class="fa-solid fa-wifi"></i>
+              <i class="fa-solid fa-burger"></i>
+              <i class="fa-solid fa-spa"></i>
+            </div>
+            <a href="hoteldetailpage.php?hotel_id=3" class="btn btn-primary bookbtn">details</a>
+          </div>
+        </div>
+        <div class="roombox">
+          <div class="hotelphoto h4"></div>
+          <div class="roomdata">
+            <h2>Single Room</h2>
+            <div class="services">
+              <i class="fa-solid fa-wifi"></i>
+              <i class="fa-solid fa-burger"></i>
+            </div>
+            <a href="hoteldetailpage.php?hotel_id=4" class="btn btn-primary bookbtn">details</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -310,6 +304,9 @@ if($usermail == true){
       <i class="fa-brands fa-instagram"></i>
       <i class="fa-brands fa-facebook"></i>
       <i class="fa-solid fa-envelope"></i>
+    </div>
+    <div class="createdby">
+      <h5>Created by Rohan</h5>
     </div>
   </section>
 </body>
